@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - AquaFlow Water Company</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo"><i class="fas fa-water"></i> AquaFlow</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/register.html" class="nav-link hidden" id="navRegister">Register</a>
+        <a href="/login.html" class="nav-link hidden" id="navLogin">Login</a>
+        <a href="/dashboard.html" class="nav-link hidden" id="navDashboard">Dashboard</a>
+        <a href="/admin.html" class="nav-link active" id="navAdmin">Admin Panel</a>
+        <button class="btn btn-outline btn-sm" id="navLogout">Logout</button>
+      </div>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <section class="dashboard-section">
+    <div class="container">
+      <div class="dashboard-header">
+        <div>
+          <h1><i class="fas fa-shield-halved"></i> Admin Panel</h1>
+          <p class="text-muted">Manage registrations and allot water connections</p>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon bg-blue"><i class="fas fa-users"></i></div>
+          <div>
+            <span class="mini-stat-number" id="statUsers">0</span>
+            <span class="mini-stat-label">Registered Users</span>
+          </div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon bg-yellow"><i class="fas fa-clock"></i></div>
+          <div>
+            <span class="mini-stat-number" id="statPending">0</span>
+            <span class="mini-stat-label">Pending Requests</span>
+          </div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon bg-green"><i class="fas fa-check-circle"></i></div>
+          <div>
+            <span class="mini-stat-number" id="statApproved">0</span>
+            <span class="mini-stat-label">Approved</span>
+          </div>
+        </div>
+        <div class="mini-stat-card">
+          <div class="mini-stat-icon bg-red"><i class="fas fa-times-circle"></i></div>
+          <div>
+            <span class="mini-stat-number" id="statRejected">0</span>
+            <span class="mini-stat-label">Rejected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="connections">
+          <i class="fas fa-faucet-drip"></i> Connection Requests
+        </button>
+        <button class="tab-btn" data-tab="users">
+          <i class="fas fa-users"></i> Registered Users
+        </button>
+      </div>
+
+      <!-- Connection Requests Tab -->
+      <div class="card tab-content" id="tab-connections">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Applicant</th>
+                <th>Type</th>
+                <th>Property</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Meter #</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="connectionsTableBody">
+              <tr><td colspan="9" class="text-center text-muted">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Registered Users Tab -->
+      <div class="card tab-content hidden" id="tab-users">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Registered On</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <tr><td colspan="6" class="text-center text-muted">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Modal -->
+  <div class="modal-overlay hidden" id="actionModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Process Connection</h3>
+        <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Applicant:</strong> <span id="modalApplicant"></span></p>
+        <p><strong>Connection Type:</strong> <span id="modalType"></span></p>
+        <p><strong>Property Address:</strong> <span id="modalAddress"></span></p>
+        <div class="form-group">
+          <label for="adminRemarks">Admin Remarks (optional)</label>
+          <textarea id="adminRemarks" rows="3" placeholder="Add any remarks..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" id="btnApprove"><i class="fas fa-check"></i> Approve & Allot</button>
+        <button class="btn btn-danger" id="btnReject"><i class="fas fa-times"></i> Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

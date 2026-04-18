@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - AquaFlow Water Company</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo"><i class="fas fa-water"></i> AquaFlow</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/register.html" class="nav-link active" id="navRegister">Register</a>
+        <a href="/login.html" class="nav-link" id="navLogin">Login</a>
+        <a href="/dashboard.html" class="nav-link hidden" id="navDashboard">Dashboard</a>
+        <a href="/admin.html" class="nav-link hidden" id="navAdmin">Admin Panel</a>
+        <button class="btn btn-outline btn-sm hidden" id="navLogout">Logout</button>
+      </div>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-icon"><i class="fas fa-user-plus"></i></div>
+        <h2>Create Account</h2>
+        <p>Register to apply for a new water connection</p>
+      </div>
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="full_name"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+        </div>
+        <div class="form-group">
+          <label for="address"><i class="fas fa-map-marker-alt"></i> Residential Address</label>
+          <textarea id="address" name="address" placeholder="Enter your full address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" name="password" placeholder="Min 6 characters" minlength="6" required />
+        </div>
+        <div class="form-group">
+          <label for="confirm_password"><i class="fas fa-lock"></i> Confirm Password</label>
+          <input type="password" id="confirm_password" placeholder="Re-enter your password" minlength="6" required />
+        </div>
+        <div id="registerError" class="form-error hidden"></div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-user-plus"></i> Register
+        </button>
+      </form>
+      <div class="auth-footer">
+        Already have an account? <a href="/login.html">Login here</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

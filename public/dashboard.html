@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - AquaFlow Water Company</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo"><i class="fas fa-water"></i> AquaFlow</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/register.html" class="nav-link hidden" id="navRegister">Register</a>
+        <a href="/login.html" class="nav-link hidden" id="navLogin">Login</a>
+        <a href="/dashboard.html" class="nav-link active" id="navDashboard">Dashboard</a>
+        <a href="/admin.html" class="nav-link hidden" id="navAdmin">Admin Panel</a>
+        <button class="btn btn-outline btn-sm" id="navLogout">Logout</button>
+      </div>
+      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <section class="dashboard-section">
+    <div class="container">
+      <div class="dashboard-header">
+        <div>
+          <h1>Welcome, <span id="userName">User</span></h1>
+          <p class="text-muted">Manage your water connections from here</p>
+        </div>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <h3><i class="fas fa-user-circle"></i> Your Profile</h3>
+        <div class="profile-grid" id="profileInfo">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+      <!-- Apply for Connection -->
+      <div class="card">
+        <h3><i class="fas fa-plus-circle"></i> Apply for New Connection</h3>
+        <form id="connectionForm" class="connection-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="connection_type">Connection Type</label>
+              <select id="connection_type" name="connection_type" required>
+                <option value="">Select type...</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
+                <option value="industrial">Industrial</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="property_type">Property Type</label>
+              <select id="property_type" name="property_type" required>
+                <option value="">Select property...</option>
+                <option value="house">Individual House</option>
+                <option value="apartment">Apartment</option>
+                <option value="office">Office</option>
+                <option value="shop">Shop</option>
+                <option value="factory">Factory</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="property_address">Property Address</label>
+            <textarea id="property_address" name="property_address" rows="3" placeholder="Full address where connection is needed" required></textarea>
+          </div>
+          <div id="connectionError" class="form-error hidden"></div>
+          <div id="connectionSuccess" class="form-success hidden"></div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Submit Application
+          </button>
+        </form>
+      </div>
+
+      <!-- My Connections -->
+      <div class="card">
+        <h3><i class="fas fa-list"></i> My Connections</h3>
+        <div id="connectionsList" class="connections-list">
+          <p class="text-muted">Loading your connections...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

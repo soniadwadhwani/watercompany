@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaFlow Water Company</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">
+        <i class="fas fa-water"></i> AquaFlow
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/register.html" class="nav-link" id="navRegister">Register</a>
+        <a href="/login.html" class="nav-link" id="navLogin">Login</a>
+        <a href="/dashboard.html" class="nav-link hidden" id="navDashboard">Dashboard</a>
+        <a href="/admin.html" class="nav-link hidden" id="navAdmin">Admin Panel</a>
+        <button class="btn btn-outline btn-sm hidden" id="navLogout">Logout</button>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Pure Water, <span class="highlight">Pure Life</span></h1>
+      <p>Providing clean, safe, and reliable water connections to every household. Register today and get connected to our municipal water supply network.</p>
+      <div class="hero-buttons">
+        <a href="/register.html" class="btn btn-primary btn-lg">Get Started <i class="fas fa-arrow-right"></i></a>
+        <a href="#services" class="btn btn-outline btn-lg">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <i class="fas fa-users"></i>
+        <span class="stat-number">10,000+</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-faucet-drip"></i>
+        <span class="stat-number">8,500+</span>
+        <span class="stat-label">Active Connections</span>
+      </div>
+      <div class="stat-card">
+        <i class="fas fa-clock"></i>
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Water Supply</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">We provide end-to-end water supply solutions for residential and commercial properties</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-house-chimney"></i></div>
+          <h3>Residential Connections</h3>
+          <p>Get a new water connection for your home with easy online registration and fast processing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <h3>Commercial Connections</h3>
+          <p>Reliable high-capacity water supply for offices, shops, and commercial establishments.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-industry"></i></div>
+          <h3>Industrial Supply</h3>
+          <p>Large-scale water supply solutions for factories and industrial complexes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-gauge-high"></i></div>
+          <h3>Metered Connections</h3>
+          <p>Smart metered connections so you only pay for what you use. Fair and transparent billing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Maintenance & Repair</h3>
+          <p>Quick response maintenance and repair services for all water supply issues.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-flask"></i></div>
+          <h3>Water Quality Testing</h3>
+          <p>Regular water quality testing to ensure safe and clean water reaches your tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Getting a new water connection is simple and quick</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Register Online</h3>
+          <p>Create your account with basic personal details and contact information.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Apply for Connection</h3>
+          <p>Fill in your property details and choose the type of water connection you need.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Review & Approval</h3>
+          <p>Our team reviews your application and processes it within 3-5 working days.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Get Connected</h3>
+          <p>Once approved, a meter number is assigned and our team installs your connection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3><i class="fas fa-water"></i> AquaFlow</h3>
+          <p>Providing clean and reliable water supply services since 2005. Committed to every drop.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="/">Home</a>
+          <a href="/register.html">Register</a>
+          <a href="/login.html">Login</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-phone"></i> 1800-WATER-00</p>
+          <p><i class="fas fa-envelope"></i> support@aquaflow.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Water Street, Cityville</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AquaFlow Water Company. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
