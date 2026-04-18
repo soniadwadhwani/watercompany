@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const DB_PATH = path.join(__dirname, 'watercompany.db');
+const DB_PATH = process.env.VERCEL
+  ? path.join('/tmp', 'watercompany.db')
+  : path.join(__dirname, 'watercompany.db');
 
 let wrapper;
 

@@ -178,11 +178,16 @@ app.get('*', (req, res) => {
 });
 
 // ─── Start ──────────────────────────────────────────────────
-initDb().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Water Company server running at http://localhost:${PORT}`);
+if (require.main === module) {
+  // Local development
+  initDb().then(() => {
+    app.listen(PORT, () => {
+      console.log(`Water Company server running at http://localhost:${PORT}`);
+    });
+  }).catch(err => {
+    console.error('Failed to initialize database:', err);
+    process.exit(1);
   });
-}).catch(err => {
-  console.error('Failed to initialize database:', err);
-  process.exit(1);
-});
+}
+
+module.exports = app;
